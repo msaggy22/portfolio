@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller
@@ -13,7 +14,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        return 'skill';
+        return Inertia::render('Skills/Index');
     }
 
     /**
@@ -23,12 +24,13 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Skills/Create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
