@@ -17,7 +17,7 @@
             </div>
             <div class="mt-2">
                 <InputLabel for="image" value="Image" />
-                <TextInput id="image" type="file" class="mt-1 block w-full" @input="form.image = $event.target.file[0]" />
+                <TextInput id="image" type="file" class="mt-1 block w-full" @input="form.image = $event.target.files[0]" />
                 <InputError class="mt-2" :message="form.errors.image" />
             </div>
 
@@ -34,18 +34,18 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import { Head, useForm } from '@inertiajs/inertia-vue3';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 const form = useForm({
-    name: '',
+    name: " ",
     image: null,
 });
 
 const submit = () => {
-    form.post(route('skills.store'))
+    form.post(route("skills.store"))
 };
 </script>

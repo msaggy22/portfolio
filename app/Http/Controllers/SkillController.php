@@ -40,7 +40,7 @@ class SkillController extends Controller
     {
         $request->validate([
             'image' => ['required', 'image'],
-            'name' => ['required', 'min:3'],
+            'name' => ['required', 'min:3']
         ]);
 
         if ($request->hasFile('image')) {
