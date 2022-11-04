@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SkillResource;
 use Inertia\Inertia;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class SkillController extends Controller
 {
@@ -16,7 +18,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Skills/Index');
+        $skills = SkillResource::collection(Skill::all());
+        return Inertia::render('Skills/Index', compact('skills'));
     }
 
     /**
@@ -39,20 +42,28 @@ class SkillController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => ['required', 'image'],
+            'image' => ['required', 'image',],
             'name' => ['required', 'min:3']
         ]);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('skills');
-            Skill::create([
-                'name' => $request->name,
-                'image'=> $image,
-            ]);
 
+            Skill::create([
+                'name'=> $request->name,
+                'image'=>$image,
+            ]);
             return Redirect::route('skills.index');
         }
         return Redirect::back();
+
+        // $image = $request->image;
+        // $img = Image::make($image);
+        // if (Image::make($image)->width() > 720) {
+        //     $img->resize(720, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->store('skills');
+        // }
     }
 
     /**
