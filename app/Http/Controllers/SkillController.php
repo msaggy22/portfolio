@@ -57,6 +57,7 @@ class SkillController extends Controller
         }
         return Redirect::back();
 
+        /* if you want resize image */
         // $image = $request->image;
         // $img = Image::make($image);
         // if (Image::make($image)->width() > 720) {
