@@ -1,7 +1,7 @@
 <template>
     <section id="about" class="section bg-light-secondary dark:bg-dark-secondary">
         <div class="flex flex-col xl:flex-row gap-24 ml-4" >
-            <img class="object-cover h-full w-[380px] md:mx-auto lg:mx-0 rounded-2xl" src="http://portfolio.test/img/about.jpg" alt="about">
+            <img class="object-cover h-full w-[460px] md:mx-auto lg:mx-0 rounded-2xl" src="http://portfolio.test/img/question-mark.png" alt="about">
             <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
                 <div class="flex flex-col">
                     <h2 class="text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3">About Me</h2>

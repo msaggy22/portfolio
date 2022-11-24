@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex flex-1 justify-end items-center h-full">
-                    <img class="rounded-full w-[460px]" src="http://portfolio.test/img/people.jpg" alt="">
+                    <img class="rounded-full w-[380px]" src="http://portfolio.test/img/foto.jpg" alt="">
                 </div>
             </div>
         </div>
